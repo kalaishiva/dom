@@ -1,0 +1,117 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <!--     https://fritscher.ch/dom-css/ -->
+</head>
+
+<body>
+    <h1>DOM - definition</h1>
+    <h2>DOM represent the page, so that javascript can change the document, structure, style, content </h2>
+    <h2 id="js"><span>DOM</span> javascript</h2>
+    <ol>
+        <li class="tech">HTML</li>
+        <li class="tech">CSS</li>
+        <li class="tech">JS</li>
+    </ol>
+
+    <h3>Javascript</h3>
+    <p id="id1">Hello HTML...</p>
+    <p class="cl1"> Hi CSS...</p>
+    <p>Hey JS...</p>
+    <h3>Adding the Unorder list </h3>
+
+    <p id="demo"></p>
+    <p id="demo-btn"></p>
+    <ul>
+
+    </ul>
+
+
+    <script>
+        //ROOT
+        //console.log(document);
+        //console.log(window.document);..window is the global object
+        //console.log(window.documentElement);
+
+        //children
+        //console.log(document.body.children);
+        //console.log(document.body.firstElementChild);
+
+        let value = document.getElementById("js").innerHTML;
+        let value1 = document.getElementById("js").innerText;
+        /* console.log(value);
+        console.log(value1); */
+
+        let val = document.getElementsByClassName("tech");
+        //console.log(val[1].innerHTML);
+
+        let val1 = document.getElementsByTagName("h1")[0].innerHTML;
+        //console.log(val1);
+
+
+        /* getElementById, class, tagname => querySelector */
+
+        //First occurrence of element in DOM list = querySelector
+        //ALL occurrence of element in DOM list = querySelectorAll
+
+        let val2 = document.querySelector("p"); //tagname
+        let val3 = document.querySelectorAll("p"); //tagname
+        //console.log(val2);
+        //console.log(val3[2]);
+
+
+        /* Changing -- innerHTML */
+        let valueP = document.querySelectorAll("p");
+        //valueP[2].setAttribute("id", "js");
+
+        //multiple class name added
+        valueP[2].classList.add("js", "kalai", "shiva")
+
+        valueP[2].textContent = "Hello welcome to the Javascript class";
+
+        /* add in innerHTML */
+        /*   const list = `<li>one</li>
+                      <li>two</li>
+                      <li>three</li>
+                      `;
+
+        let unorderlist = document.querySelector("ul");
+        unorderlist.innerHTML = list;
+ */
+
+        //create an element
+        let title = document.createElement("h1");
+        title.className = "title";
+        title.style.fontSize = "24px";
+        title.textContent = "Web development BOOTCAMP";
+        //console.log(title);
+        document.body.appendChild(title);
+
+
+        //removing the list from the html
+        let ol = document.querySelector("ol");
+        let lists = document.querySelectorAll("li");
+        for (item of lists) {
+            ol.removeChild(item);
+        }
+
+
+        //adding an button(addEvent listener)---it take the 1.eventname(click or mouseover) 2.function
+        document.addEventListener("click", hello);
+        document.addEventListener("mouseover", mouse);
+
+        function hello() {
+            document.getElementById("demo").innerHTML = "IRON MAN";
+        }
+
+        function mouse() {
+            document.getElementById("demo-btn").innerHTML = "It is mouse over";
+        }
+    </script>
+</body>
+
+</html>
