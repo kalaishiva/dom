@@ -1,0 +1,100 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on DOM</title>
+</head>
+
+<body>
+    <h1>Welcome to Javascript Bootcamp</h1>
+
+    Enter your Name :
+    <input type="text" name="name" id="inputName" />
+
+    <p id="js"></p>
+
+    <!--     <button onclick="maths()" id="prompt">submit</button> 
+ -->
+    <!--     <button ondblclick="hello()" id="js">Click Me</button>
+ -->
+
+
+    <script>
+        //1. alert("Welcome to Javascript Bootcamp");
+
+        /* setTimeout(() => {
+             alert("Hello");
+         }, 1000);
+         */
+
+        //2.confirmation Box----we have two thing ok and cancel.
+
+        /*
+        let val = confirm("Are you sure?");
+
+        if (val) {
+            document.getElementById("js").innerHTML = "OK is pressed";
+        } else {
+            document.getElementById("js").innerHTML = "CANCEL is pressed";
+        }
+
+        */
+
+        //3. Prompt
+        // prompt("Enter your name", 'Kalai');
+        /* 
+                let value = prompt("Please solve 20 - 10", "0");
+                if (value == 10) {
+                    document.getElementById("js").innerHTML = "Ticket booked successfully";
+
+                } else {
+                    document.getElementById("js").innerHTML = "Failed to book the ticket";
+
+                } */
+
+        /* 
+                function maths() {
+                    let value = prompt("Please solve 20 - 10", "0");
+                    if (value == 10) {
+                        document.getElementById("js").innerHTML = "Ticket booked successfully";
+
+                    } else {
+                        document.getElementById("js").innerHTML = "Failed to book the ticket";
+
+                    }
+
+                } */
+
+
+        /* function hello() {
+
+            // document.getElementById("js").style.backgroundColor = "Red";
+            // or
+
+            /*   let bgColor = document.querySelector("#js");
+              bgColor.style.backgroundColor = "Red"; 
+
+        } */
+
+        /*   document.addEventListener("dblclick", mouseClick());
+
+          function mouseClick() {
+              document.querySelector("#js").innerText = "Welcome to js";
+
+          } */
+
+
+        document.addEventListener("input", writeName); //("dom event to be done", "function name")
+
+        function writeName() {
+            let firstname = document.getElementById("inputName").value;
+            document.getElementById("js").innerHTML = "You are writing : " + firstname;
+
+        }
+    </script>
+
+</body>
+
+</html>
